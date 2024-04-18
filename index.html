@@ -11,6 +11,10 @@
             max-width: 550px;
             margin: 0 auto;
         }
+
+        #en {
+            display: none;
+        }
         
         .fixed-link {
             position: absolute;
@@ -40,8 +44,31 @@
 </head>
 <body>
     <div class="container">
-        <a href="https://kdzhambazov.github.io/demo-cocktail-menu/index_en.html" class="fixed-link">EN</a>
-        <img src="https://kdzhambazov.github.io/demo-cocktail-menu/menu_bg.jpg" alt="Cocktail Menu">
+        <div id="bg">
+            <a id="bg_link" href="#" class="fixed-link">EN</a>
+            <img src="https://kdzhambazov.github.io/demo-cocktail-menu/menu_bg.jpg" alt="Cocktail Menu">
+        </div>
+        <div id="en">
+            <a id="en_link" href="#" class="fixed-link">BG</a>
+            <img src="https://kdzhambazov.github.io/demo-cocktail-menu/menu_en.jpg" alt="Cocktail Menu">
+        </div>
     </div>
+    <script>
+        const bgContainer = document.getElementById("bg");
+        const enContainer = document.getElementById("en");
+        const bgAnchor = document.getElementById("bg_link");
+        const enAnchor = document.getElementById("en_link");
+
+        bgAnchor.addEventListener('click', () => {
+            bgContainer.style.display = 'none';
+            enContainer.style.display = 'block';
+        });
+
+        enAnchor.addEventListener('click', () => {
+            enContainer.style.display = 'none';
+            bgContainer.style.display = 'block';
+        });
+
+    </script>
 </body>
 </html>
